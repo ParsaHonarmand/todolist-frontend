@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
+import ToDoItems from './ToDoItems.js'
 
 class App extends React.Component {
     constructor(props) {
@@ -38,6 +39,7 @@ class App extends React.Component {
     }
 
     render(){
+        let items = this.state.items
         return(
             <div className="ui checkbox">
                 <h2 id='centralizedContent'>Welcome to your ToDo list</h2>
@@ -50,7 +52,7 @@ class App extends React.Component {
 
                 <ul>
                     <div>
-                        <ToDoItems key={this.state.items} />
+                        <ToDoItems listItem={this.state.currentItem} wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} />
                     </div>
                 </ul>
 
@@ -58,22 +60,5 @@ class App extends React.Component {
         )
     }
 }
-
-function ToDoItems(props){
-    return (
-        props.key.map((todo) => 
-            <li key={todo.id}>
-                {todo.text}
-                <button key={todo.id} className="ui animated button" onClick={this.deleteToDo.bind(this, todo)}>
-                    <div className="visible content">DELETE</div>
-                    <div className="hidden content">
-                        <i aria-hidden="true" className="trash icon"></i>
-                    </div>
-                </button>
-            </li>
-            )
-        )
-}
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
