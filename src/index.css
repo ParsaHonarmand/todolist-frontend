@@ -12,3 +12,12 @@ div {
     width: 300px;
     text-align: center;
 }
+
+#mainDash {
+    border: 10px, solid,red
+}
+
+#listItem {
+    width: 750px;
+    
+}

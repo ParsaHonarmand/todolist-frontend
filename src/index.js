@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            items: ['go shopping'],
+            items: [],
             currentItem: ''
         }    
     }
@@ -17,7 +17,6 @@ class App extends React.Component {
         this.setState({
             items: [...this.state.items, this.state.currentItem]
         })
-        console.log(`current items: ${this.state.items}`)
     }
 
     handleInput(e){
@@ -28,26 +27,26 @@ class App extends React.Component {
     }
 
     deleteToDo(itemIndex){
+        console.log("Delete item")
         if (itemIndex === 'undefined') {      
             console.log(itemIndex)    
         }
-        const newToDos = [...this.state.items]
+
+        const newToDos = this.state.items
         newToDos.splice(itemIndex, 1)
         this.setState({
-            item: newToDos
+            items: newToDos
         })
     }
 
     render(){
-        let items = this.state.items
         return(
-            <div className="ui checkbox">
+            <div className="main" id="mainDash">
                 <h2 id='centralizedContent'>Welcome to your ToDo list</h2>
                 
                 <form id='centralizedContent' className="ui medium form" onSubmit={this.addToDo.bind(this)}>
                     <input placeholder="What do you need to do?" type='text' onChange={this.handleInput.bind(this)}/>
                     <button className="ui button">ADD</button>
-                    <div className="ui hidden divider"></div>
                 </form>
 
                 <ul>
