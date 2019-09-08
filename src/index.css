@@ -1,23 +1,18 @@
 body {
-    background-color: cornflowerblue;
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 }
 
-div {
-    margin-left: auto;
-    margin-right: auto;
+
+#header {
+    margin: 0 auto;
     width: 400px;
-}
-
-#centralizedContent {
-    width: 300px;
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
-#mainDash {
-    border: 10px, solid,red
-}
-
-#listItem {
-    width: 750px;
-    
+#list {
+    margin: 0 auto;
+    width: 400px;
+    text-transform: uppercase
 }

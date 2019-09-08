@@ -26,12 +26,11 @@ class App extends React.Component {
         })
     }
 
+
     deleteToDo(itemIndex){
-        console.log("Delete item")
         if (itemIndex === 'undefined') {      
             console.log(itemIndex)    
         }
-
         const newToDos = this.state.items
         newToDos.splice(itemIndex, 1)
         this.setState({
@@ -41,20 +40,17 @@ class App extends React.Component {
 
     render(){
         return(
-            <div className="main" id="mainDash">
-                <h2 id='centralizedContent'>Welcome to your ToDo list</h2>
-                
-                <form id='centralizedContent' className="ui medium form" onSubmit={this.addToDo.bind(this)}>
-                    <input placeholder="What do you need to do?" type='text' onChange={this.handleInput.bind(this)}/>
-                    <button className="ui button">ADD</button>
-                </form>
-
-                <ul>
-                    <div>
-                        <ToDoItems listItem={this.state.currentItem} wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} />
-                    </div>
-                </ul>
-
+            <div>
+                <div id="header">
+                    <h2>Welcome to your ToDo list</h2>
+                    <form className="ui medium form" onSubmit={this.addToDo.bind(this)}>
+                        <input placeholder="What do you need to do?" type='text' onChange={this.handleInput.bind(this)}/>
+                        <button className="ui button">ADD</button>
+                    </form>
+                </div>
+                <div id="list">
+                    <ToDoItems id="list" listItem={this.state.currentItem} wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} />
+                </div>
             </div>
         )
     }
