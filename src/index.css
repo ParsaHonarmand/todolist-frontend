@@ -2,7 +2,6 @@ body {
     background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 }
 
-
 #header {
     margin: 0 auto;
     width: 400px;
@@ -15,4 +14,13 @@ body {
     margin: 0 auto;
     width: 400px;
     text-transform: uppercase
+}
+
+#addBut {
+    margin-top: 10px
+}
+
+#todoList {
+    border: 5px solid #CEBDFF;
+    border-radius: 10px;
 }
