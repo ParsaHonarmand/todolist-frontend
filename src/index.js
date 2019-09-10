@@ -14,6 +14,7 @@ class App extends React.Component {
 
     addToDo(e){
         e.preventDefault()
+        if(!this.state.currentItem) return
         this.setState({
             items: [...this.state.items, this.state.currentItem]
         })
@@ -28,7 +29,7 @@ class App extends React.Component {
 
 
     deleteToDo(e){
-        if (e === 'undefined') {      
+        if (e === undefined) {      
             console.log(e)    
         }
         const newToDos = this.state.items
@@ -39,13 +40,27 @@ class App extends React.Component {
     }
 
 
+    completeToDo(e) {
+        e.preventDefault()
+        if (e === undefined) {      
+            console.log(e)    
+        }
+        var completed = document.getElementsByClassName("singleItem")
+        console.log(completed)
+        completed[e.currentTarget.value].style.setProperty("text-decoration", "line-through")
+        this.setState({
+            items: this.state.items
+        })
+    }
+
     render(){
         var date = new Date().getDate()
         var month = new Date().getMonth()
         var year = new Date().getFullYear()
+
         if (this.state.items.length === 0) {
             return(
-                <div>
+                <div className="w3-animate-opacity">
                     <div id="header">
                         <h2>Welcome to your ToDo list</h2>
                         <p>TODAY'S DATE: {date}/{month}/{year}</p> 
@@ -71,8 +86,8 @@ class App extends React.Component {
                             <button className="ui button">ADD</button>
                         </form>
                     </div>
-                    <div id="list">
-                        <ToDoItems id="list" listItem={this.state.currentItem} wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} />
+                    <div id="list" className="w3-animate-opacity">
+                        <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />
                     </div>
                 </div>
             )
