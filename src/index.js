@@ -14,10 +14,11 @@ class App extends React.Component {
 
     addToDo(e){
         e.preventDefault()
-        if(!this.state.currentItem) return
+        if(!this.state.currentItem) return 
         this.setState({
             items: [...this.state.items, this.state.currentItem]
         })
+        e.currentTarget.reset()
     }
 
     handleInput(e){
@@ -48,9 +49,6 @@ class App extends React.Component {
         var completed = document.getElementsByClassName("singleItem")
         console.log(completed)
         completed[e.currentTarget.value].style.setProperty("text-decoration", "line-through")
-        this.setState({
-            items: this.state.items
-        })
     }
 
     render(){
@@ -64,7 +62,7 @@ class App extends React.Component {
                     <div id="header">
                         <h2>Welcome to your ToDo list</h2>
                         <p>TODAY'S DATE: {date}/{month}/{year}</p> 
-                        <form className="ui medium form" onSubmit={this.addToDo.bind(this)}>
+                        <form className="ui medium form" id="myForm" name="myForm" onSubmit={this.addToDo.bind(this)}>
                             <input placeholder="What do you need to do?" type='text' onChange={this.handleInput.bind(this)}/>
                             <button id="addBut" className="ui button">ADD</button>
                         </form>
