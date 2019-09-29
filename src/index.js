@@ -100,7 +100,7 @@ class App extends React.Component {
                     </div>       
                     <footer>
                         <div className="ui container">
-                            <a><i className="ui big github icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
                             <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
                     </footer>     
@@ -120,10 +120,10 @@ class App extends React.Component {
                     </div>
                     <footer>
                         <div className="ui container">
-                            <a><i className="large github icon"></i></a>
-                            <a><i className="large linkedin icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
+                            <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
-                    </footer>
+                    </footer>     
                 </div>
             )
         }
@@ -141,10 +141,10 @@ class App extends React.Component {
                     </div>
                     <footer>
                         <div className="ui container">
-                            <a><i className="large github icon"></i></a>
-                            <a><i className="large linkedin icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
+                            <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
-                    </footer>
+                    </footer>     
                 </div>
             )            
         }
@@ -162,10 +162,10 @@ class App extends React.Component {
                     </div>
                     <footer>
                         <div className="ui container">
-                            <a><i className="large github icon"></i></a>
-                            <a><i className="large linkedin icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
+                            <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
-                    </footer>
+                    </footer>     
                 </div>
             )                     
         }
