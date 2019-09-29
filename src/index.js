@@ -100,7 +100,7 @@ class App extends React.Component {
                     </div>       
                     <footer>
                         <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                             <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
                     </footer>     
@@ -120,7 +120,7 @@ class App extends React.Component {
                     </div>
                     <footer>
                         <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                             <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
                     </footer>     
@@ -141,7 +141,7 @@ class App extends React.Component {
                     </div>
                     <footer>
                         <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                             <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
                     </footer>     
@@ -162,7 +162,7 @@ class App extends React.Component {
                     </div>
                     <footer>
                         <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list"><i className="ui big github icon"></i></a>
+                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                             <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                         </div>
                     </footer>     
