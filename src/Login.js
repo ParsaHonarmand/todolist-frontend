@@ -110,7 +110,7 @@ class Login extends React.Component {
         }
         else if (this.state.loginValidation===true) {
             return(
-                <Index user={this.state.username} password={this.state.password}/>
+                <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation}/>
             )
         }
     }
