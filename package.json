@@ -16,7 +16,7 @@
     "request": "^2.88.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set REACT_APP_ENV=production & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "deploy": "gh-pages -d build",

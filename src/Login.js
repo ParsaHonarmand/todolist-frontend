@@ -46,7 +46,7 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password
         }
-        axios.post('http://localhost:3001/getUser', userObj)
+        axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
             .then(res => console.log(res.data))
             .then(res => itemsToSend = res.data)
             .catch(err => console.log(err))
@@ -63,7 +63,7 @@ class Login extends React.Component {
     }
 
     getItem() {
-        axios.get('http://localhost:3001/item')
+        axios.get(process.env.REACT_APP_BACK_END_URL + 'item')
             .then(res => this.setState({items: res.data}))
             .then(res => console.log(res.data))
             .catch(err => console.log(err))

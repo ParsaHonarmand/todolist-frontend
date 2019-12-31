@@ -37,20 +37,20 @@ class App extends React.Component {
     }
 
     getItem() {
-        axios.get('http://localhost:3001/item')
+        axios.get(process.env.REACT_APP_BACK_END_URL + 'item')
             .then(res => this.setState({items: res.data}))
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
     
     getCompletedItem() {
-        axios.get('http://localhost:3001/completedList')
+        axios.get(process.env.REACT_APP_BACK_END_URL + 'completedList')
             .then(res => this.setState({status: res.data}))
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
     // componentDidMount() {
-    //     axios.get('http://localhost:3001/item')
+    //     axios.get(process.env.REACT_APP_BACK_END_URL + 'item')
     //         .then(res => {
     //             this.setState({items: [...res.data.todo_name]})
     //         })
@@ -72,7 +72,7 @@ class App extends React.Component {
             todo: this.state.items
         }
 
-        axios.post("http://localhost:3001/item", userObj) 
+        axios.post(process.env.REACT_APP_BACK_END_URL + "item", userObj) 
             .then(x => console.log('added to todolist:', x.data))
             .catch(err => console.log(err))
 
@@ -101,7 +101,7 @@ class App extends React.Component {
             items: newToDos
         })
 
-        axios.post("http://localhost:3001/delete", itemObj) 
+        axios.post(process.env.REACT_APP_BACK_END_URL + "delete", itemObj) 
             .then(x => console.log('item deleted: ', x.data))
             .catch(err => console.log(err))
     }
@@ -121,7 +121,7 @@ class App extends React.Component {
             status: newCompleted
         })
 
-        axios.post("http://localhost:3001/delete", itemObj) 
+        axios.post(process.env.REACT_APP_BACK_END_URL + "delete", itemObj) 
         .then(x => console.log('item deleted: ', x.data))
         .catch(err => console.log(err))
     }
@@ -146,7 +146,7 @@ class App extends React.Component {
             status: [...this.state.status, itemObj]
         })
 
-        axios.post("http://localhost:3001/complete", itemObj) 
+        axios.post(process.env.REACT_APP_BACK_END_URL + "complete", itemObj) 
             .then(x => console.log('added to completed:', x.data))
             .catch(err => console.log(err))
     }
@@ -169,7 +169,7 @@ class App extends React.Component {
             status: newCompleted
         })        
 
-        axios.post("http://localhost:3001/revert", itemObj) 
+        axios.post(process.env.REACT_APP_BACK_END_URL + "revert", itemObj) 
             .then(x => console.log('reverted back to todo:', x.data))
             .catch(err => console.log(err))
     }
@@ -178,7 +178,7 @@ class App extends React.Component {
 
     render(){
         console.log("***")
-        console.log(process.env.NODE_ENV)
+        console.log(process.env.REACT_APP_BACKEND_URL)
         if (status===false) {
             return(
                 <Login />
