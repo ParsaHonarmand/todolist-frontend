@@ -22,14 +22,12 @@ body {
 #list {
     margin: 0 auto;
     width: 400px;
-    text-transform: uppercase
 }
 #completeList {
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
     width: 400px;
-    text-transform: uppercase;
 }
 #addBut {
     margin-top: 5px

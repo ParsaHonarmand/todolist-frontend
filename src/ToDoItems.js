@@ -9,7 +9,7 @@ function ToDoItems(props){
                         <button className="ui mini secondary button" value={index} onClick={props.onComplete}><i className="checkmark icon"></i></button>
                         <button className="ui mini secondary icon button" value={index} onClick={props.onDelete}><i className="trash icon"></i></button>
                     </div>         
-                    <label key={index} className="w3-animate-opacity" id="lines"><span className="singleItem">{char}</span></label>          
+                    <label key={index} className="w3-animate-opacity" id="lines"><span className="singleItem">{char.todo_name}</span></label>          
                 </div>
             </div>
             )

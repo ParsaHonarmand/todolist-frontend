@@ -4,30 +4,85 @@ import './index.css'
 import ToDoItems from './ToDoItems.js'
 import CompletedItems from './CompletedItems.js';
 import Header from './Header'
+import Login from './Login';
+import SignUp from './Signup'
+
+const axios = require('axios');
+let status = false
+let user
 
 class App extends React.Component {
     constructor(props) {
         super(props)
+        if (props.registered===true) {
+            status = true
+            user = props.user
+            this.callAPI = this.callAPI.bind(this)
+            this.getItem = this.getItem.bind(this) 
+            this.getCompletedItem = this.getCompletedItem.bind(this)
+            this.callAPI();
+           // this.getItem();
+           // this.getCompletedItem();   
+        }
         this.state = {
             items: [],
             status: [],
             currentItem: ''
         }    
     }
+    callAPI() {
+        axios.get('http://localhost:3001')
+        .then(x => console.log(x))
+        .catch(err => console.log(err))
+    }
+
+    getItem() {
+        axios.get('http://localhost:3001/item')
+            .then(res => this.setState({items: res.data}))
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
+    
+    getCompletedItem() {
+        axios.get('http://localhost:3001/completedList')
+            .then(res => this.setState({status: res.data}))
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
+    // componentDidMount() {
+    //     axios.get('http://localhost:3001/item')
+    //         .then(res => {
+    //             this.setState({items: [...res.data.todo_name]})
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //         })
+    // }
 
     addToDo(e){
         e.preventDefault()
         if (!this.state.currentItem) return 
+
         this.setState({
             items: [...this.state.items, this.state.currentItem],
         })
-        e.currentTarget.reset()
+
+        const userObj = {
+            username: user,
+            todo: this.state.items
+        }
+
+        axios.post("http://localhost:3001/item", userObj) 
+            .then(x => console.log('added to todolist:', x.data))
+            .catch(err => console.log(err))
+            
+        e.target.reset()
     }
 
     handleInput(e){
         e.preventDefault()
         this.setState({
-            currentItem: e.target.value
+            currentItem: {todo_name: e.target.value, todo_check: false}
         })
     }
 
@@ -37,10 +92,18 @@ class App extends React.Component {
             console.log(e)    
         }
         const newToDos = this.state.items
+        console.log(newToDos[e.currentTarget.value].todo_name)
+        const itemObj = {
+            todo_name : newToDos[e.currentTarget.value].todo_name,
+        }
         newToDos.splice(e.currentTarget.value, 1)
         this.setState({
             items: newToDos
         })
+
+        axios.post("http://localhost:3001/delete", itemObj) 
+            .then(x => console.log('item deleted: ', x.data))
+            .catch(err => console.log(err))
     }
 
     deleteCompleted(e) {
@@ -48,10 +111,19 @@ class App extends React.Component {
             console.log(e)    
         }
         const newCompleted = this.state.status
+        const itemObj = {
+            todo_name : newCompleted[e.currentTarget.value].todo_name,
+            todo_check : true
+        }
+       // console.log(newCompleted[e.currentTarget.value])
         newCompleted.splice(e.currentTarget.value, 1)
         this.setState({
             status: newCompleted
         })
+
+        axios.post("http://localhost:3001/delete", itemObj) 
+        .then(x => console.log('item deleted: ', x.data))
+        .catch(err => console.log(err))
     }
 
 
@@ -65,10 +137,18 @@ class App extends React.Component {
         const newToDos = this.state.items
         newToDos.splice(e.currentTarget.value, 1)
 
+        const itemObj = {
+            todo_name : itemToBeCompleted,
+            todo_check: true
+        }
         this.setState ({
             items: newToDos,
-            status: [...this.state.status, itemToBeCompleted]
+            status: [...this.state.status, itemObj]
         })
+
+        axios.post("http://localhost:3001/complete", itemObj) 
+            .then(x => console.log('added to completed:', x.data))
+            .catch(err => console.log(err))
     }
 
     revertCompleted(e) {
@@ -78,22 +158,37 @@ class App extends React.Component {
         }
         const completed = document.getElementsByClassName("completedItem")
         const itemToBeCompleted = completed[e.currentTarget.value].innerText
-
+        const itemObj = {
+            todo_name : itemToBeCompleted,
+            todo_check: false
+        }
         const newCompleted = this.state.status
         newCompleted.splice(e.currentTarget.value, 1)
         this.setState({
-            items: [...this.state.items, itemToBeCompleted],
+            items: [...this.state.items, itemObj],
             status: newCompleted
         })        
+
+        axios.post("http://localhost:3001/revert", itemObj) 
+            .then(x => console.log('reverted back to todo:', x.data))
+            .catch(err => console.log(err))
     }
 
+
+
     render(){
+        if (status===false) {
+            return(
+                <Login />
+            )
+        }
+        else {
         if ((this.state.items.length === 0) && (this.state.status.length === 0)) {
             return(
                 <div className="w3-animate-opacity">
                     <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
                     <div id="list">
-                        <h2 id="header" className="ui header">Your List is Currently Empty!</h2>
+                        <h2 id="header" className="ui header">Your List is Currently Empty!</h2>                    
                     </div>
                     <div id="completeList" className="w3-animate-opacity">
                         <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
@@ -170,6 +265,7 @@ class App extends React.Component {
             )                     
         }
     }
+    }
 }
-
+export default App
 ReactDOM.render(<App />, document.getElementById('root'));
