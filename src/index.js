@@ -17,12 +17,12 @@ class App extends React.Component {
         if (props.registered===true) {
             status = true
             user = props.user
-            this.callAPI = this.callAPI.bind(this)
+            //this.callAPI = this.callAPI.bind(this)
             this.getItem = this.getItem.bind(this) 
             this.getCompletedItem = this.getCompletedItem.bind(this)
-            this.callAPI();
-           // this.getItem();
-           // this.getCompletedItem();   
+            //this.callAPI();
+            this.getItem();
+            this.getCompletedItem();   
         }
         this.state = {
             items: [],
@@ -30,14 +30,14 @@ class App extends React.Component {
             currentItem: ''
         }    
     }
-    callAPI() {
-        axios.get('http://localhost:3001')
-        .then(x => console.log(x))
-        .catch(err => console.log(err))
-    }
+    // callAPI() {
+    //     axios.get('http://localhost:3001')
+    //     .then(x => console.log(x))
+    //     .catch(err => console.log(err))
+    // }
 
     getItem() {
-        axios.get(process.env.REACT_APP_BACK_END_URL + 'item')
+        axios.get(process.env.REACT_APP_BACK_END_URL + 'item', {username: user})
             .then(res => this.setState({items: res.data}))
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
