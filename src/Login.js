@@ -102,13 +102,13 @@ class Login extends React.Component {
                 </form> 
             )
         }
-        else if (this.state.click===true) {
+        else if (this.state.click===true && this.state.loginValidation===false) {
             return(
                 <Signup />
             )
         }
        // else if (this.state.loginValidation===true) {
-        else {
+        else if (this.state.loginValidation===true){
             return(
                 <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation}/>
             )
