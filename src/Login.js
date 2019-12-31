@@ -7,6 +7,7 @@ import Header from './Header'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Signup from './Signup';
 import { Component } from "react";
+import Index from './index'
 
 const axios = require('axios');
 const itemsToSend = []
@@ -51,8 +52,9 @@ class Login extends React.Component {
             .then(res => itemsToSend = res.data)
             .catch(err => console.log(err))
         //reset at the end
-        if (itemsToSend===null)
-            console.log("EMPTY")
+        this.setState({
+            loginValidation: true
+        })
     }
 
     handleLink(e) {
@@ -70,7 +72,7 @@ class Login extends React.Component {
     }
 
     render(){
-        if (this.state.click===false) {
+        if (this.state.click===false && this.loginValidation===false) {
         return(
             <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
                 <div className="error field">
@@ -101,9 +103,14 @@ class Login extends React.Component {
             
         )
         }
-        else {
+        else if (this.state.click===true) {
             return(
                 <Signup />
+            )
+        }
+        else if (this.state.loginValidation===true) {
+            return(
+                <Index user={this.state.username} password={this.state.password}/>
             )
         }
     }
