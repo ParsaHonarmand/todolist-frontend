@@ -73,42 +73,42 @@ class Login extends React.Component {
 
     render(){
         if (this.state.click===false && this.loginValidation===false) {
-        return(
-            <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
-                <div className="error field">
-                    <label htmlFor="form-input-first-name">Username</label>
-                    <div className="ui fluid input">
-                        <input
-                            type="text"
-                            aria-describedby="form-input-first-name-error-message"
-                            aria-invalid="true"
-                            placeholder="Username"
-                            id="form-input-first-name"
-                            onChange={this.handleUserName.bind(this)}
-                            value={this.state.username}
-                        />
-                    </div>  
-                </div>
-                <div className="error field">
-                    <label>Password</label>
-                    <div className="ui fluid input">
-                        <input type="text" aria-invalid="true" placeholder="Password" onChange={this.handlePassword.bind(this)} value={this.state.password} />
+            return(
+                <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
+                    <div className="error field">
+                        <label htmlFor="form-input-first-name">Username</label>
+                        <div className="ui fluid input">
+                            <input
+                                type="text"
+                                aria-describedby="form-input-first-name-error-message"
+                                aria-invalid="true"
+                                placeholder="Username"
+                                id="form-input-first-name"
+                                onChange={this.handleUserName.bind(this)}
+                                value={this.state.username}
+                            />
+                        </div>  
                     </div>
-                </div>
-                <button className="ui button">Submit</button>
-                <div>
-                    <h4>Don't have an account? Click <a href="" onClick={this.handleLink.bind(this)}>here</a> to sign up! </h4>
-                </div>  
-            </form> 
-            
-        )
+                    <div className="error field">
+                        <label>Password</label>
+                        <div className="ui fluid input">
+                            <input type="text" aria-invalid="true" placeholder="Password" onChange={this.handlePassword.bind(this)} value={this.state.password} />
+                        </div>
+                    </div>
+                    <button className="ui button">Submit</button>
+                    <div>
+                        <h4>Don't have an account? Click <a href="" onClick={this.handleLink.bind(this)}>here</a> to sign up! </h4>
+                    </div>  
+                </form> 
+            )
         }
         else if (this.state.click===true) {
             return(
                 <Signup />
             )
         }
-        else if (this.state.loginValidation===true) {
+       // else if (this.state.loginValidation===true) {
+        else {
             return(
                 <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation}/>
             )
