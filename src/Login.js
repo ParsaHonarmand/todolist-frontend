@@ -72,7 +72,19 @@ class Login extends React.Component {
     }
 
     render(){
-        if (this.state.click===false && this.loginValidation===false) {
+        if (this.state.click===true && this.state.loginValidation===false) {
+            return(
+                <Signup />
+            )
+        }
+       // else if (this.state.loginValidation===true) {
+        else if (this.state.loginValidation===true){
+            return(
+                <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation}/>
+            )
+        }
+        //if (this.state.click===false && this.loginValidation===false) {
+        else {
             return(
                 <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
                     <div className="error field">
@@ -100,17 +112,6 @@ class Login extends React.Component {
                         <h4>Don't have an account? Click <a href="" onClick={this.handleLink.bind(this)}>here</a> to sign up! </h4>
                     </div>  
                 </form> 
-            )
-        }
-        else if (this.state.click===true && this.state.loginValidation===false) {
-            return(
-                <Signup />
-            )
-        }
-       // else if (this.state.loginValidation===true) {
-        else if (this.state.loginValidation===true){
-            return(
-                <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation}/>
             )
         }
     }
