@@ -63,7 +63,7 @@ class Login extends React.Component {
     }
 
     getItem() {
-        axios.get(process.env.REACT_APP_BACK_END_URL + 'item')
+        axios.get(process.env.REACT_APP_BACK_END_URL + '/item')
             .then(res => this.setState({items: res.data}))
             .then(res => console.log(res.data))
             .catch(err => console.log(err))

@@ -44,7 +44,7 @@ class App extends React.Component {
     }
     
     getCompletedItem() {
-        axios.get(process.env.REACT_APP_BACK_END_URL + 'completedList')
+        axios.get(process.env.REACT_APP_BACK_END_URL + 'completedList', {username: user})
             .then(res => this.setState({status: res.data}))
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
