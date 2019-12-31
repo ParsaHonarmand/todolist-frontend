@@ -51,7 +51,8 @@ class Login extends React.Component {
             .then(res => console.log(res.data))
             .then(res => itemsToSend = res.data)
             .catch(err => console.log(err))
-        //reset at the end
+       console.log("ITEMS TO SEND", itemsToSend)
+            //reset at the end
         this.setState({
             loginValidation: true
         })
