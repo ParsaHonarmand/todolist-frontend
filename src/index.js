@@ -75,7 +75,7 @@ class App extends React.Component {
         axios.post("http://localhost:3001/item", userObj) 
             .then(x => console.log('added to todolist:', x.data))
             .catch(err => console.log(err))
-            
+
         e.target.reset()
     }
 
@@ -177,6 +177,8 @@ class App extends React.Component {
 
 
     render(){
+        console.log("***")
+        console.log(process.env.NODE_ENV)
         if (status===false) {
             return(
                 <Login />
