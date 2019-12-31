@@ -94,6 +94,7 @@ class App extends React.Component {
         const newToDos = this.state.items
         console.log(newToDos[e.currentTarget.value].todo_name)
         const itemObj = {
+            username: user,
             todo_name : newToDos[e.currentTarget.value].todo_name,
         }
         newToDos.splice(e.currentTarget.value, 1)
