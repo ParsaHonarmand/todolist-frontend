@@ -178,7 +178,7 @@ class App extends React.Component {
 
     render(){
         console.log("***")
-        console.log(process.env.REACT_APP_BACKEND_URL)
+        console.log(process.env.REACT_APP_BACK_END_URL)
         if (status===false) {
             return(
                 <Login />
