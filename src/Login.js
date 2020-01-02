@@ -10,7 +10,6 @@ import { Component } from "react";
 import Index from './index'
 
 const axios = require('axios');
-let itemsToSend 
 
 class Login extends React.Component {
     constructor(props) {
@@ -47,7 +46,7 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password
         }
-        itemsToSend = axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
+        let itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
             .then(res => console.log(res.data[0]))
             .catch(err => console.log(err))
             //reset at the end
