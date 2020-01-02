@@ -47,11 +47,11 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password
         }
-        axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
+        itemsToSend = axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
             .then(res => console.log(res.data[0]))
-            .then(res => itemsToSend=res.data[0].todos)
             .catch(err => console.log(err))
             //reset at the end
+        console.log(itemsToSend)
         this.setState({
             loginValidation: true
         })
