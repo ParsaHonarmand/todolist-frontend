@@ -8,7 +8,6 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Signup from './Signup';
 import { Component } from "react";
 import Index from './index'
-let itemsToSend
 
 const axios = require('axios');
 
@@ -49,11 +48,11 @@ class Login extends React.Component {
         }
         
         const getItems = async () => {
-            itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
-                .then(res => console.log(res.data[0]))
-                .catch(err => console.log(err))
+            let itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
+                // .then(res => console.log(res.data[0]))
+                // .catch(err => console.log(err))
             this.setState({
-                todos: itemsToSend
+                todos: itemsToSend.data[0]
             })
         }
         getItems()
