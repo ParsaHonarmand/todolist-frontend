@@ -51,10 +51,10 @@ class Login extends React.Component {
             let itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
                 .then(res => console.log(res.data[0]))
                 .catch(err => console.log(err))
-            this.setState({
-                todos: itemsToSend.data[0]
-            })
-            console.log(this.state.todos)
+            // this.setState({
+            //     todos: itemsToSend.data[0]
+            // })
+            console.log(itemsToSend)
         }
         getItems()
         //reset at the end
