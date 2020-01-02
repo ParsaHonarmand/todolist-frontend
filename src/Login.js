@@ -8,6 +8,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Signup from './Signup';
 import { Component } from "react";
 import Index from './index'
+let itemsToSend
 
 const axios = require('axios');
 
@@ -46,9 +47,9 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password
         }
-        let itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
-            .then(res => console.log(res.data[0]))
-            .catch(err => console.log(err))
+        itemsToSend = axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
+                        .then(res => console.log(res.data[0]))
+                        .catch(err => console.log(err))
             //reset at the end
         console.log(itemsToSend)
         this.setState({
