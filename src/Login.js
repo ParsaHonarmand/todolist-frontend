@@ -10,7 +10,7 @@ import { Component } from "react";
 import Index from './index'
 
 const axios = require('axios');
-let itemsToSend = []
+let itemsToSend 
 
 class Login extends React.Component {
     constructor(props) {

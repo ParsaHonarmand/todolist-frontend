@@ -38,15 +38,14 @@ class App extends React.Component {
 
     getItem() {
         axios.get(process.env.REACT_APP_BACK_END_URL + 'item', {username: user})
-            .then(res => this.setState({items: res.data}))
-            .then(res => console.log(res.data))
+            .then(res => console.log(res))
             .catch(err => console.log(err))
     }
     
     getCompletedItem() {
         axios.get(process.env.REACT_APP_BACK_END_URL + 'completedList', {username: user})
-            .then(res => this.setState({status: res.data}))
-            .then(res => console.log(res.data))
+        //    .then(res => this.setState({status: res.data}))
+            .then(res => console.log(res))
             .catch(err => console.log(err))
     }
     // componentDidMount() {
