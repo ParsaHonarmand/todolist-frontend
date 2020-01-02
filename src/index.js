@@ -38,13 +38,13 @@ class App extends React.Component {
 
     retrieveItems() {
         axios.post(process.env.REACT_APP_BACK_END_URL + 'retrieveItem', {username: user})
-            .then(res => console.log(res))
+            .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
     
     getCompletedItem() {
         axios.post(process.env.REACT_APP_BACK_END_URL + 'completedList', {username: user})
-            .then(res => console.log(res))
+            .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
     // componentDidMount() {
