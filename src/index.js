@@ -18,10 +18,10 @@ class App extends React.Component {
             status = true
             user = props.user
             //this.callAPI = this.callAPI.bind(this)
-            this.getItem = this.getItem.bind(this) 
+            this.retrieveItems = this.retrieveItems.bind(this) 
             this.getCompletedItem = this.getCompletedItem.bind(this)
             //this.callAPI();
-            this.getItem();
+            this.retrieveItems();
             this.getCompletedItem();   
         }
         this.state = {
@@ -36,15 +36,14 @@ class App extends React.Component {
     //     .catch(err => console.log(err))
     // }
 
-    getItem() {
-        axios.get(process.env.REACT_APP_BACK_END_URL + 'item', {username: user})
+    retrieveItems() {
+        axios.post(process.env.REACT_APP_BACK_END_URL + 'retrieveItem', {username: user})
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
     
     getCompletedItem() {
-        console.log(user)
-        axios.get(process.env.REACT_APP_BACK_END_URL + 'completedList', {username: user})
+        axios.post(process.env.REACT_APP_BACK_END_URL + 'completedList', {username: user})
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
