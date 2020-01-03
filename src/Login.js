@@ -20,7 +20,7 @@ class Login extends React.Component {
             username: "",
             password: "",
             click: false,
-            todos: {},
+            todos: [],
             loginValidation: false
         }
     }
