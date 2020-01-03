@@ -21,8 +21,8 @@ class App extends React.Component {
             this.retrieveItems = this.retrieveItems.bind(this) 
             this.getCompletedItem = this.getCompletedItem.bind(this)
             //this.callAPI();
-            this.retrieveItems();
-            this.getCompletedItem();   
+        //    this.retrieveItems();
+        //    this.getCompletedItem();   
         }
         this.state = {
             items: props.todos,
