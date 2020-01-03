@@ -72,16 +72,17 @@ class Login extends React.Component {
             //         todos: itemsToSend.todos
             //     })
             // }
+            this.setState({
+                todos: items,
+                loginValidation: true
+            })
             } catch(err) {
                 console.log(err)
             }
         }
         getItems()
         //reset at the end
-        this.setState({
-            todos: items,
-            loginValidation: true
-        })
+
     }
 
     handleLink(e) {
