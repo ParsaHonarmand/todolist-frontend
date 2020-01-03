@@ -8,6 +8,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Signup from './Signup';
 import { Component } from "react";
 import Index from './index'
+let items = []
 
 const axios = require('axios');
 
@@ -53,12 +54,13 @@ class Login extends React.Component {
             try {
                 const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
                 console.log(itemsToSend.data[0].todos)
-                let items = []
+                
                 var i
                 for (i=0; i<itemsToSend.data[0].todos.length; i++) {
-                    items = [...items, itemsToSend.data[0].todos[i].todo_name]
+                    items = [...items, itemsToSend.data[0].todos[i]]
                 }
                 console.log(items)
+                
                 // .then(res => 
                 //     console.log(res.data[0])
                 // )
@@ -77,6 +79,7 @@ class Login extends React.Component {
         getItems()
         //reset at the end
         this.setState({
+            todos: items,
             loginValidation: true
         })
     }
