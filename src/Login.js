@@ -54,6 +54,7 @@ class Login extends React.Component {
                 const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
                 console.log(itemsToSend.data[0].todos)
                 let items = []
+                var i
                 for (i=0; i<itemsToSend.data[0].todos; i++) {
                     items = [...items, itemsToSend.data[0].todos[i].todo_name]
                 }
