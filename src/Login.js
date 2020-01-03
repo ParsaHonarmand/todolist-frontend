@@ -48,8 +48,10 @@ class Login extends React.Component {
             password: this.state.password
         }
         async function getItems () {
+            try {
             const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
-            
+            console.log(itemsToSend.data[0])
+
                 // .then(res => 
                 //     console.log(res.data[0])
                 // )
@@ -61,7 +63,9 @@ class Login extends React.Component {
             //         todos: itemsToSend.todos
             //     })
             // }
-            console.log(itemsToSend)
+            } catch(err) {
+                console.log(err)
+            }
         }
         getItems()
         //reset at the end
