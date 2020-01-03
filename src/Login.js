@@ -47,25 +47,26 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password
         }
-        
-        async function getItems () {
-            const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
-                .then(res => {console.log(res.data[0]); this.setState({todos:res.data[0]})})
-                .catch(err => console.log(err))
-            // if (itemsToSend) {
-            //     this.setState({
-            //         todos: itemsToSend.todos
-            //     })
-            // }
-            console.log(itemsToSend)
-        }
         getItems()
         //reset at the end
         this.setState({
             loginValidation: true
         })
     }
-
+    async getItems() {
+        const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
+            .then(res => {
+                console.log(res.data[0]); 
+              //  this.setState({todos:res.data[0]})
+            })
+            .catch(err => console.log(err))
+        // if (itemsToSend) {
+        //     this.setState({
+        //         todos: itemsToSend.todos
+        //     })
+        // }
+        console.log(itemsToSend)
+    }
     handleLink(e) {
         e.preventDefault()
         this.setState({
