@@ -15,6 +15,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props)
         this.validateLogin = this.validateLogin.bind(this)
+        this.parseItems = this.parseItems.bind(this)
         this.state = {
             username: "",
             password: "",
@@ -38,7 +39,13 @@ class Login extends React.Component {
         })
     }
 
-
+    parseItems(list) {
+        let items = []
+        for (i=0; i<list.length; i++) {
+            items = [...items, list[i].todo_name]
+        }
+        console.log(items)
+    }
     validateLogin(e) {
         e.preventDefault()
         console.log(this.state.username)
@@ -51,7 +58,7 @@ class Login extends React.Component {
             try {
                 const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
                 console.log(itemsToSend.data[0].todos)
-
+                parseItems(itemsToSend.data[0].todos)
                 // .then(res => 
                 //     console.log(res.data[0])
                 // )
