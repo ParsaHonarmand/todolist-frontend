@@ -14,6 +14,7 @@ const axios = require('axios');
 class Login extends React.Component {
     constructor(props) {
         super(props)
+        this.getItems = this.getItems.bind(this)
         this.state = {
             username: "",
             password: "",
