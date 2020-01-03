@@ -72,17 +72,16 @@ class Login extends React.Component {
             //         todos: itemsToSend.todos
             //     })
             // }
-            this.setState({
-                todos: items,
-                loginValidation: true
-            })
             } catch(err) {
                 console.log(err)
             }
         }
         getItems()
         //reset at the end
-
+        this.setState({
+            todos: items,
+            loginValidation: true
+        })
     }
 
     handleLink(e) {
@@ -105,7 +104,7 @@ class Login extends React.Component {
             )
         }
        // else if (this.state.loginValidation===true) {
-        else if (this.state.loginValidation===true){
+        else if (this.state.loginValidation===true && this.state.items){
             return(
                 <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation} todos={this.state.todos}/>
             )
