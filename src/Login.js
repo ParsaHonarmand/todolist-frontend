@@ -55,7 +55,7 @@ class Login extends React.Component {
                 console.log(itemsToSend.data[0].todos)
                 let items = []
                 var i
-                for (i=0; i<itemsToSend.data[0].todos; i++) {
+                for (i=0; i<itemsToSend.data[0].todos.length; i++) {
                     items = [...items, itemsToSend.data[0].todos[i].todo_name]
                 }
                 console.log(items)
