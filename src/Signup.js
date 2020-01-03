@@ -100,7 +100,7 @@ class Signup extends React.Component {
         )}
         else {
             return(
-                <Index registered={this.state.goToItems} user={this.state.username}/>
+                <Index registered={this.state.goToItems} user={this.state.username} todos={this.state.todos}/>
             )
         }
     }

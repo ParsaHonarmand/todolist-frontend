@@ -25,7 +25,7 @@ class App extends React.Component {
             this.getCompletedItem();   
         }
         this.state = {
-            items: [props.todos],
+            items: props.todos,
             status: [],
             currentItem: ''
         }    
