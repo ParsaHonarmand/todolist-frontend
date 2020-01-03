@@ -14,6 +14,7 @@ const axios = require('axios');
 class Login extends React.Component {
     constructor(props) {
         super(props)
+        this.validateLogin = this.validateLogin.bind(this)
         this.state = {
             username: "",
             password: "",
