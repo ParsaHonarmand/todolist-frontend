@@ -14,12 +14,11 @@ const axios = require('axios');
 class Login extends React.Component {
     constructor(props) {
         super(props)
-        this.getItems = this.getItems.bind(this)
         this.state = {
             username: "",
             password: "",
             click: false,
-            todos: {},
+            todos: [],
             loginValidation: false
         }
     }
@@ -51,7 +50,8 @@ class Login extends React.Component {
         async function getItems () {
             const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
                 //.then(res => console.log(res.data[0]))
-                .then(res => this.setState({todos: res.data[0]}))
+                .then(res => res.json())
+                .then(json => this.setState({todos: json}))
                 .catch(err => console.log(err))
             // this.setState({
             //     todos: itemsToSend.todos
@@ -74,7 +74,6 @@ class Login extends React.Component {
 
     getItem() {
         axios.get(process.env.REACT_APP_BACK_END_URL + '/item')
-            .then(res => this.setState({items: res.data}))
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
