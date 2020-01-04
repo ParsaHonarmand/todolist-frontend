@@ -101,12 +101,13 @@ class App extends React.Component {
             console.log(e)    
         }
         const newToDos = this.state.items
+        const completedItems = this.state.status
         console.log(newToDos[e.currentTarget.value].todo_name)
+        newToDos.splice(e.currentTarget.value, 1)
         const itemObj = {
             username: user,
-            todos: newToDos
+            todos: newToDos.concat(completedItems)
         }
-        newToDos.splice(e.currentTarget.value, 1)
         this.setState({
             items: newToDos
         })
