@@ -59,9 +59,9 @@ class Login extends React.Component {
                 // for (i=0; i<itemsToSend.data[0].todos.length; i++) {
                 //     items = [...items, itemsToSend.data[0].todos[i]]
                 // }
-                console.log(items)
+                // console.log(items)
                 //return await Promise.resolve(items)
-                return itemsToSend
+                return itemsToSend.data[0].todos
             } catch(err) {
                 console.log(err)
             }
