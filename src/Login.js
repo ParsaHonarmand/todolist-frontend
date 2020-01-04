@@ -42,6 +42,7 @@ class Login extends React.Component {
     parseItems(list) {
 
     }
+    
     validateLogin(e) {
         e.preventDefault()
         console.log(this.state.username)
@@ -82,6 +83,7 @@ class Login extends React.Component {
             todos: items,
             loginValidation: true
         })
+        console.log(items)
     }
 
     handleLink(e) {
