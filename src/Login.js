@@ -8,7 +8,6 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Signup from './Signup';
 import { Component } from "react";
 import Index from './index'
-let items = []
 
 const axios = require('axios');
 
@@ -53,30 +52,21 @@ class Login extends React.Component {
         }
         async function getItems () {
             try {
-                const itemsToSend = await Promise.resolve(axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj))
+                const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
                 console.log(itemsToSend.data[0].todos)
-                
-                var i
-                for (i=0; i<itemsToSend.data[0].todos.length; i++) {
-                    items = [...items, itemsToSend.data[0].todos[i]]
-                }
+                // let items
+                // var i
+                // for (i=0; i<itemsToSend.data[0].todos.length; i++) {
+                //     items = [...items, itemsToSend.data[0].todos[i]]
+                // }
                 console.log(items)
-                return await Promise.resolve(items)
-                // .then(res => 
-                //     console.log(res.data[0])
-                // )
-                //     //this.setState({todos:res.data[0]}))
-                // .catch(err => console.log(err))
-
-            // if (itemsToSend) {
-            //     this.setState({
-            //         todos: itemsToSend.todos
-            //     })
-            // }
+                //return await Promise.resolve(items)
+                return itemsToSend
             } catch(err) {
                 console.log(err)
             }
         }
+
         getItems().then(x => {
             items = x
         })
