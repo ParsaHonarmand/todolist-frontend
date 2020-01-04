@@ -67,12 +67,19 @@ class Login extends React.Component {
             }
         }
 
-        const items = getItems()
+        //const items = getItems()
+        (async function() {
+            const items = await getItems()
+            this.setState({
+                todos: items,
+                loginValidation: true
+            })
+          })();
         console.log("items:", items)
-        this.setState({
-            todos: items,
-            loginValidation: true
-        })
+        // this.setState({
+        //     todos: items,
+        //     loginValidation: true
+        // })
         console.log("TODOS:", this.state.todos)
         // (async () => {
         //     items = getItems()
@@ -82,8 +89,6 @@ class Login extends React.Component {
         //     })
         //  })()
         //reset at the end
-
-        console.log(items)
     }
 
     handleLink(e) {
