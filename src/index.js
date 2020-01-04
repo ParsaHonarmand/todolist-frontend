@@ -71,17 +71,19 @@ class App extends React.Component {
     addToDo(e){
         e.preventDefault()
         if (!this.state.currentItem) return 
-
-        this.setState({
-            items: [...this.state.items, this.state.currentItem],
-        })
-
+        
         const userObj = {
             username: user,
             todo: this.state.items
         }
 
-        axios.post(process.env.REACT_APP_BACK_END_URL + "item", userObj) 
+        this.setState({
+            items: [...this.state.items, this.state.currentItem],
+        })
+
+
+
+        axios.post(process.env.REACT_APP_BACK_END_URL + "item", this.state.currentItem) 
             .then(x => console.log('added to todolist:', x.data))
             .catch(err => console.log(err))
 
