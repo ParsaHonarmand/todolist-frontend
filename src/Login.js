@@ -43,6 +43,7 @@ class Login extends React.Component {
     }
 
     validateLogin(e) {
+        let currentComponent = this
         e.preventDefault()
         console.log(this.state.username)
         console.log(this.state.password)
@@ -70,7 +71,7 @@ class Login extends React.Component {
         //const items = getItems()
         (async function() {
             const items = await getItems()
-            this.setState({
+            currentComponent.setState({
                 todos: items,
                 loginValidation: true
             })
