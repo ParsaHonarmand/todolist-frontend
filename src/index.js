@@ -151,6 +151,7 @@ class App extends React.Component {
         newToDos.splice(e.currentTarget.value, 1)
 
         const itemObj = {
+            username: user,
             todo_name: itemToBeCompleted,
             todo_check: true
         }
