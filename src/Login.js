@@ -104,7 +104,7 @@ class Login extends React.Component {
             )
         }
        // else if (this.state.loginValidation===true) {
-        else if (this.state.loginValidation===true && this.state.items){
+        else if (this.state.loginValidation===true && this.state.todos.length!==0){
             return(
                 <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation} todos={this.state.todos}/>
             )
