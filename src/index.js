@@ -204,100 +204,98 @@ class App extends React.Component {
 
 
     render(){
-        console.log("***")
-        console.log(process.env.REACT_APP_BACK_END_URL)
         if (status===false) {
             return(
                 <Login />
             )
         }
         else {
-        if ((this.state.items.length === 0) && (this.state.status.length === 0)) {
-            return(
-                <div className="w3-animate-opacity">
-                    <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
-                    <div id="list">
-                        <h2 id="header" className="ui header">Your List is Currently Empty!</h2>                    
-                    </div>
-                    <div id="completeList" className="w3-animate-opacity">
-                        <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />
-                        <button onClick={this.signOut.bind(this)}>Sign out</button> 
-                    </div>       
-                    <footer>
-                        <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
-                            <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+            if ((this.state.items.length === 0) && (this.state.status.length === 0)) {
+                return(
+                    <div className="w3-animate-opacity">
+                        <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
+                        <div id="list">
+                            <h2 id="header" className="ui header">Your List is Currently Empty!</h2>                    
                         </div>
-                    </footer>     
-                </div>
-            )
-        }
-        else if ((this.state.items.length > 0) && (this.state.status.length === 0)){
-            return(
-                <div>
-                    <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
-                    <div id="list" className="w3-animate-opacity">
-                        <h4 id="listHeader" className="ui header">Your ToDo's</h4>
-                        <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
+                        <div id="completeList" className="w3-animate-opacity">
+                            <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />
+                            <button onClick={this.signOut.bind(this)}>Sign out</button> 
+                        </div>       
+                        <footer>
+                            <div className="ui container">
+                                <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
+                                <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                            </div>
+                        </footer>     
                     </div>
-                    <div id="completeList" className="w3-animate-opacity">
-                        <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
-                        <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
-                    </div>
-                    <footer>
-                        <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
-                            <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                )
+            }
+            else if ((this.state.items.length > 0) && (this.state.status.length === 0)){
+                return(
+                    <div>
+                        <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
+                        <div id="list" className="w3-animate-opacity">
+                            <h4 id="listHeader" className="ui header">Your ToDo's</h4>
+                            <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
                         </div>
-                    </footer>     
-                </div>
-            )
-        }
-        else if ((this.state.items.length > 0) && (this.state.status.length > 0)){
-            return(
-                <div>
-                    <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
-                    <div id="list" className="w3-animate-opacity">
-                        <h4 id="listHeader" className="ui header">Your ToDo's</h4>
-                        <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
-                    </div>
-                    <div id="completeList" className="w3-animate-opacity">
-                        <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
-                        <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
-                        <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
-                    </div>
-                    <footer>
-                        <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
-                            <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                        <div id="completeList" className="w3-animate-opacity">
+                            <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
+                            <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
                         </div>
-                    </footer>     
-                </div>
-            )            
-        }
-        else {
-            return(
-                <div>
-                    <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
-                    <div id="list" className="w3-animate-opacity">
-                        <h2 id="header" className="ui header">Your List is Currently Empty!</h2>
-                        <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
+                        <footer>
+                            <div className="ui container">
+                                <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
+                                <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                            </div>
+                        </footer>     
                     </div>
-                    <div id="completeList" className="w3-animate-opacity">
-                        <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
-                        <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
-                        <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
-                    </div>
-                    <footer>
-                        <div className="ui container">
-                            <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
-                            <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                )
+            }
+            else if ((this.state.items.length > 0) && (this.state.status.length > 0)){
+                return(
+                    <div>
+                        <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
+                        <div id="list" className="w3-animate-opacity">
+                            <h4 id="listHeader" className="ui header">Your ToDo's</h4>
+                            <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
                         </div>
-                    </footer>     
-                </div>
-            )                     
+                        <div id="completeList" className="w3-animate-opacity">
+                            <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
+                            <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
+                            <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
+                        </div>
+                        <footer>
+                            <div className="ui container">
+                                <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
+                                <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                            </div>
+                        </footer>     
+                    </div>
+                )            
+            }
+            else {
+                return(
+                    <div>
+                        <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
+                        <div id="list" className="w3-animate-opacity">
+                            <h2 id="header" className="ui header">Your List is Currently Empty!</h2>
+                            <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
+                        </div>
+                        <div id="completeList" className="w3-animate-opacity">
+                            <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
+                            <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
+                            <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
+                        </div>
+                        <footer>
+                            <div className="ui container">
+                                <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
+                                <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                            </div>
+                        </footer>     
+                    </div>
+                )                     
+            }
         }
-    }
     }
 }
 export default App

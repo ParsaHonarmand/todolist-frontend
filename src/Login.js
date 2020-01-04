@@ -10,7 +10,7 @@ import { Component } from "react";
 import Index from './index'
 
 const axios = require('axios');
-//let items
+
 class Login extends React.Component {
     constructor(props) {
         super(props)
