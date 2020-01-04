@@ -42,7 +42,7 @@ class Login extends React.Component {
     parseItems(list) {
 
     }
-    
+
     validateLogin(e) {
         e.preventDefault()
         console.log(this.state.username)
@@ -61,7 +61,7 @@ class Login extends React.Component {
                     items = [...items, itemsToSend.data[0].todos[i]]
                 }
                 console.log(items)
-                
+                return await items
                 // .then(res => 
                 //     console.log(res.data[0])
                 // )
@@ -78,6 +78,7 @@ class Login extends React.Component {
             }
         }
         getItems()
+        items = await getItems()
         //reset at the end
         this.setState({
             todos: items,
