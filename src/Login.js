@@ -100,7 +100,7 @@ class Login extends React.Component {
         //if (this.state.click===false && this.loginValidation===false) {
         else {
             return(
-                <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="todolist">
+                <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
                     <div className="error field">
                         <label htmlFor="form-input-first-name">Username</label>
                         <div className="ui fluid input">
@@ -118,7 +118,13 @@ class Login extends React.Component {
                     <div className="error field">
                         <label>Password</label>
                         <div className="ui fluid input">
-                            <input type="text" aria-invalid="true" placeholder="Password" onChange={this.handlePassword.bind(this)} value={this.state.password} />
+                            <input 
+                                type="text" 
+                                aria-invalid="true" 
+                                placeholder="Password" 
+                                onChange={this.handlePassword.bind(this)} 
+                                value={this.state.password} 
+                            />
                         </div>
                     </div>
                     <button className="ui button">Login</button>
