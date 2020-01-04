@@ -10,6 +10,8 @@ import SignUp from './Signup'
 const axios = require('axios');
 let status = false
 let user
+let prevCompleted = []
+let stillToDo = []
 
 class App extends React.Component {
     constructor(props) {
@@ -17,6 +19,15 @@ class App extends React.Component {
         if (props.registered===true) {
             status = true
             user = props.user
+            let wholeList = props.todos
+            for (var i=0; i<props.todos.length; i++){
+                if(props.todos[i].todo_check===false){
+                    stillToDo = [...stillToDo, props.todos[i]]
+                }
+                else{
+                    prevCompleted = [...prevCompleted, props.todos[i]]
+                }
+            }
             //this.callAPI = this.callAPI.bind(this)
             this.retrieveItems = this.retrieveItems.bind(this) 
             this.getCompletedItem = this.getCompletedItem.bind(this)
@@ -25,8 +36,8 @@ class App extends React.Component {
         //    this.getCompletedItem();   
         }
         this.state = {
-            items: props.todos,
-            status: [],
+            items: stillToDo,
+            status: prevCompleted,
             currentItem: ''
         }    
     }

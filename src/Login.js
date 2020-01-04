@@ -55,20 +55,12 @@ class Login extends React.Component {
             try {
                 const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
                 console.log(itemsToSend.data[0].todos)
-                // let items
-                // var i
-                // for (i=0; i<itemsToSend.data[0].todos.length; i++) {
-                //     items = [...items, itemsToSend.data[0].todos[i]]
-                // }
-                // console.log(items)
-                //return await Promise.resolve(items)
                 return itemsToSend.data[0].todos
             } catch(err) {
                 console.log(err)
             }
         }
 
-        //const items = getItems()
         (async function() {
             const items = await getItems()
             currentComponent.setState({
@@ -76,19 +68,7 @@ class Login extends React.Component {
                 loginValidation: true
             })
           })();
-        //console.log("items:", items)
-        // this.setState({
-        //     todos: items,
-        //     loginValidation: true
-        // })
-        console.log("TODOS:", this.state.todos)
-        // (async () => {
-        //     items = getItems()
-        //     this.setState({
-        //         todos: items,
-        //         loginValidation: true
-        //     })
-        //  })()
+
         //reset at the end
     }
 
