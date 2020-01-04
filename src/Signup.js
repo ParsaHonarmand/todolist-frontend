@@ -53,7 +53,7 @@ class Signup extends React.Component {
     render() {
         if (this.state.goToItems===false) {
         return (
-            <form className="ui form" onSubmit={this.register.bind(this)} id="header">
+            <form className="ui form" onSubmit={this.register.bind(this)} id="todolist">
                 <div className="error field">
                     <label htmlFor="form-input-first-name">Username</label>
                     <div className="ui fluid input">
