@@ -178,6 +178,7 @@ class App extends React.Component {
         const completed = document.getElementsByClassName("completedItem")
         const itemToBeCompleted = completed[e.currentTarget.value].innerText
         const itemObj = {
+            username: user,
             todo_name : itemToBeCompleted,
             todo_check: false
         }
