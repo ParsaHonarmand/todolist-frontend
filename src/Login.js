@@ -77,8 +77,8 @@ class Login extends React.Component {
                 console.log(err)
             }
         }
-        getItems()
-        items = await getItems()
+        //getItems()
+        items = getItems()
         //reset at the end
         this.setState({
             todos: items,
