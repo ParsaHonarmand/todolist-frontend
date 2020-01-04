@@ -142,8 +142,8 @@ class App extends React.Component {
         if (e === undefined) {      
             console.log(e)    
         }
-        const completed = document.getElementsByClassName("singleItem")
-        const itemToBeCompleted = completed[e.currentTarget.value].innerText
+        const leftToDo = document.getElementsByClassName("singleItem")
+        const itemToBeCompleted = leftToDo[e.currentTarget.value].innerText
 
         let newToDos = this.state.items
         let prevCompleted = this.state.status
@@ -164,7 +164,7 @@ class App extends React.Component {
             username: user,
             todos: newToDos.concat(prevCompleted)
         }
-        axios.post(process.env.REACT_APP_BACK_END_URL + "complete", userObj) 
+        axios.post(process.env.REACT_APP_BACK_END_URL + "complete", itemObj) 
             .then(x => console.log('added to completed:', x.data))
             .catch(err => console.log(err))
     }
