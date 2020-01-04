@@ -146,20 +146,23 @@ class App extends React.Component {
         const itemToBeCompleted = completed[e.currentTarget.value].innerText
 
         let newToDos = this.state.items
-        let newCompleted = this.state.status
+        let prevCompleted = this.state.status
+
         newToDos.splice(e.currentTarget.value, 1)
 
         const itemObj = {
-            todo_name : itemToBeCompleted,
+            todo_name: itemToBeCompleted,
             todo_check: true
         }
         this.setState ({
             items: newToDos,
             status: [...this.state.status, itemObj]
         })
+        newToDos = this.state.items
+        prevCompleted = this.state.status
         const userObj = {
             username: user,
-            todos: this.state.items.concat(this.state.status)
+            todos: newToDos.concat(prevCompleted)
         }
         axios.post(process.env.REACT_APP_BACK_END_URL + "complete", userObj) 
             .then(x => console.log('added to completed:', x.data))
