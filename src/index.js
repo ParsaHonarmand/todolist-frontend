@@ -196,6 +196,11 @@ class App extends React.Component {
             .catch(err => console.log(err))
     }
 
+    signOut() {
+        this.setState({
+            status: false
+        })
+    }
 
 
     render(){
@@ -215,7 +220,8 @@ class App extends React.Component {
                         <h2 id="header" className="ui header">Your List is Currently Empty!</h2>                    
                     </div>
                     <div id="completeList" className="w3-animate-opacity">
-                        <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
+                        <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />
+                        <button onClick={this.signOut.bind(this)}>Sign out</button> 
                     </div>       
                     <footer>
                         <div className="ui container">
