@@ -61,7 +61,7 @@ class Login extends React.Component {
                     items = [...items, itemsToSend.data[0].todos[i]]
                 }
                 console.log(items)
-                return await items
+                return await Promise.resolve(items)
                 // .then(res => 
                 //     console.log(res.data[0])
                 // )
