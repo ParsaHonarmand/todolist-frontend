@@ -14,7 +14,6 @@ class Signup extends React.Component {
         this.state = {
             username: "",
             password: "",
-            repeatedPassword: "",
             todos: [],
             goToItems: false
         }
@@ -32,13 +31,6 @@ class Signup extends React.Component {
             password: e.target.value
         })
     }
-    handlePasswordCheck(e) {
-        e.preventDefault()
-        this.setState({
-            repeatedPassword: e.target.value
-        })
-    }
-
 
     register(e) {
         e.preventDefault()
@@ -84,14 +76,6 @@ class Signup extends React.Component {
                                 placeholder="Password" 
                                 onChange={this.handlePassword.bind(this)} 
                                 value={this.state.password} 
-                        />
-                    </div>
-                    <div className="ui fluid input">
-                        <input type="text" 
-                                aria-invalid="true" 
-                                placeholder="Confirm password" 
-                                onChange={this.handlePasswordCheck.bind(this)} 
-                                value={this.state.repeatedPassword} 
                         />
                     </div>
                 </div>

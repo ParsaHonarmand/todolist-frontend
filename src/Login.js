@@ -121,9 +121,10 @@ class Login extends React.Component {
                             <input type="text" aria-invalid="true" placeholder="Password" onChange={this.handlePassword.bind(this)} value={this.state.password} />
                         </div>
                     </div>
-                    <button className="ui button">Submit</button>
+                    <button className="ui button">Login</button>
                     <div>
-                        <h4>Don't have an account? Click <a href="" onClick={this.handleLink.bind(this)}>here</a> to sign up! </h4>
+                        <h4>Don't have an account?</h4> 
+                        <h4>Click <a href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
                     </div>  
                 </form> 
             )
