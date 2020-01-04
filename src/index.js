@@ -74,7 +74,7 @@ class App extends React.Component {
         
         const userObj = {
             username: user,
-            todo: this.state.items
+            todo: this.state.currentItem
         }
 
         this.setState({
@@ -83,7 +83,7 @@ class App extends React.Component {
 
 
 
-        axios.post(process.env.REACT_APP_BACK_END_URL + "item", this.state.currentItem) 
+        axios.post(process.env.REACT_APP_BACK_END_URL + "item", userObj) 
             .then(x => console.log('added to todolist:', x.data))
             .catch(err => console.log(err))
 
