@@ -78,14 +78,16 @@ class Login extends React.Component {
             }
         }
         //getItems()
-        items = getItems()
-                .then(items => {console.log(items)})
-                .catch(err => console.log(err))
+        
+        (async () => {
+            items = getItems()
+            this.setState({
+                todos: items,
+                loginValidation: true
+            })
+         })()
         //reset at the end
-        this.setState({
-            todos: items,
-            loginValidation: true
-        })
+
         console.log(items)
     }
 
