@@ -10,7 +10,7 @@ import { Component } from "react";
 import Index from './index'
 
 const axios = require('axios');
-let items
+//let items
 class Login extends React.Component {
     constructor(props) {
         super(props)
@@ -67,13 +67,13 @@ class Login extends React.Component {
             }
         }
 
-        getItems().then(x => {
-            items = x
-        })
+        const items = getItems()
+        console.log("items:", items)
         this.setState({
             todos: items,
             loginValidation: true
         })
+        console.log("TODOS:", this.state.todos)
         // (async () => {
         //     items = getItems()
         //     this.setState({
