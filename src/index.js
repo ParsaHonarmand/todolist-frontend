@@ -121,13 +121,14 @@ class App extends React.Component {
         if (e === undefined) {      
             console.log(e)    
         }
-        const newCompleted = this.state.status
-        const itemObj = {
-            todo_name : newCompleted[e.currentTarget.value].todo_name,
-            todo_check : true
-        }
+        var newCompleted = this.state.status
+        var prevTodos = this.state.items
        // console.log(newCompleted[e.currentTarget.value])
         newCompleted.splice(e.currentTarget.value, 1)
+        const itemObj = {
+            username: user,
+            todos: prevTodos.concat(newCompleted)
+        }
         this.setState({
             status: newCompleted
         })
