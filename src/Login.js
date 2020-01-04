@@ -53,7 +53,7 @@ class Login extends React.Component {
         }
         async function getItems () {
             try {
-                const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
+                const itemsToSend = await Promise.resolve(axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj))
                 console.log(itemsToSend.data[0].todos)
                 
                 var i
@@ -80,10 +80,10 @@ class Login extends React.Component {
         getItems().then(x => {
             items = x
         })
-            this.setState({
-                todos: items,
-                loginValidation: true
-            })
+        this.setState({
+            todos: items,
+            loginValidation: true
+        })
         // (async () => {
         //     items = getItems()
         //     this.setState({
