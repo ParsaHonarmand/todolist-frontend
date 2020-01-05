@@ -12,20 +12,22 @@ let status = false
 let user
 let prevCompleted = []
 let stillToDo = []
-
+let unDefItems = []
 class App extends React.Component {
     constructor(props) {
         super(props)
         if (props.registered===true) {
             status = true
             user = props.user
-            let wholeList = props.todos
-            for (var i=0; i<props.todos.length; i++){
-                if(props.todos[i].todo_check===false){
-                    stillToDo = [...stillToDo, props.todos[i]]
-                }
-                else{
-                    prevCompleted = [...prevCompleted, props.todos[i]]
+            if (props.todos) {
+                let wholeList = props.todos
+                for (var i=0; i<props.todos.length; i++){
+                    if(props.todos[i].todo_check===false){
+                        stillToDo = [...stillToDo, props.todos[i]]
+                    }
+                    else{
+                        prevCompleted = [...prevCompleted, props.todos[i]]
+                    }
                 }
             }
             //this.callAPI = this.callAPI.bind(this)
