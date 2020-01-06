@@ -52,6 +52,7 @@ body {
 }
 
 footer {
+    bottom: 5;
     display: flex;
     justify-content: center
 }
