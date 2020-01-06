@@ -20,7 +20,8 @@ class Login extends React.Component {
             password: "",
             click: false,
             todos: [],
-            loginValidation: false
+            loginValidation: false,
+            error: ""
         }
     }
 
@@ -54,8 +55,10 @@ class Login extends React.Component {
         async function getItems () {
             try {
                 const itemsToSend = await axios.post(process.env.REACT_APP_BACK_END_URL + 'getUser', userObj)
-                console.log(itemsToSend.data[0].todos)
-                return itemsToSend.data[0].todos
+                if (itemsToSend!==null){
+                    console.log(itemsToSend.data[0].todos)
+                    return itemsToSend.data[0].todos
+                }
             } catch(err) {
                 console.log(err)
             }
@@ -63,10 +66,17 @@ class Login extends React.Component {
 
         (async function() {
             const items = await getItems()
-            currentComponent.setState({
-                todos: items,
-                loginValidation: true
-            })
+            if (items){
+                currentComponent.setState({
+                    todos: items,
+                    loginValidation: true
+                })
+            }
+            else {
+                currentComponent.setState({
+                    error: "Incorrect Username and/or Password"
+                })
+            }
           })();
 
         //reset at the end
@@ -85,6 +95,7 @@ class Login extends React.Component {
             .catch(err => console.log(err))
     }
 
+
     render(){
         if (this.state.click===true && this.state.loginValidation===false) {
             return(
@@ -99,6 +110,7 @@ class Login extends React.Component {
         }
         //if (this.state.click===false && this.loginValidation===false) {
         else {
+            if (this.state.error.length === 0) {
             return(
                 <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
                     <div className="error field">
@@ -134,6 +146,47 @@ class Login extends React.Component {
                     </div>  
                 </form> 
             )
+            }
+            else {
+                return (
+                    <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
+                    <div className="error field">
+                        <label htmlFor="form-input-first-name">Username</label>
+                        <div className="ui fluid input">
+                            <input
+                                type="text"
+                                aria-describedby="form-input-first-name-error-message"
+                                aria-invalid="true"
+                                placeholder="Username"
+                                id="form-input-first-name"
+                                onChange={this.handleUserName.bind(this)}
+                                value={this.state.username}
+                            />
+                        </div>  
+                    </div>
+                    <div className="error field">
+                        <label>Password</label>
+                        <div className="ui fluid input">
+                            <input 
+                                type="text" 
+                                aria-invalid="true" 
+                                placeholder="Password" 
+                                onChange={this.handlePassword.bind(this)} 
+                                value={this.state.password} 
+                            />
+                        </div>
+                    </div>
+                    <button className="ui button">Login</button>
+                    <div>
+                        <h4>Don't have an account?</h4> 
+                        <h4>Click <a href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
+                    </div>  
+                    <div>
+                        <h4>{this.state.error}</h4>
+                    </div>
+                </form> 
+                )
+            }
         }
     }
 }
