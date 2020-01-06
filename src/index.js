@@ -224,7 +224,7 @@ class App extends React.Component {
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />
                         </div>       
                         <footer>
-                            <div className="ui container">
+                            <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                                 <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
@@ -245,7 +245,7 @@ class App extends React.Component {
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
                         </div>
                         <footer>
-                            <div className="ui container">
+                            <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                                 <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
@@ -267,7 +267,7 @@ class App extends React.Component {
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />  
                         </div>
                         <footer>
-                            <div className="ui container">
+                            <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                                 <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
@@ -289,7 +289,7 @@ class App extends React.Component {
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
                         </div>
                         <footer>
-                            <div className="ui container">
+                            <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
                                 <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 

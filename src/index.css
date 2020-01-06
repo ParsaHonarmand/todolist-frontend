@@ -50,3 +50,8 @@ footer {
     display: flex;
     justify-content: center
 }
+
+#footerDiv {
+    margin: 0 auto;
+    display: inline-block;    
+}
