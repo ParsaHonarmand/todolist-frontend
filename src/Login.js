@@ -1,12 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css'
-import ToDoItems from './ToDoItems.js'
-import CompletedItems from './CompletedItems.js';
-import Header from './Header'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Signup from './Signup';
-import { Component } from "react";
 import Index from './index'
 
 const axios = require('axios');
@@ -27,9 +21,8 @@ class Login extends React.Component {
 
     handleUserName(e) {
         e.preventDefault()
-        //console.log(e.target.value)
         this.setState({
-            username: e.target.value
+            username: e.target.value.toLowerCase()
         })  
     }
     handlePassword(e) {
@@ -37,10 +30,6 @@ class Login extends React.Component {
         this.setState({
             password: e.target.value
         })
-    }
-
-    parseItems(list) {
-
     }
 
     validateLogin(e) {

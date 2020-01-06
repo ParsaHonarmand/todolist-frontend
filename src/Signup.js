@@ -22,7 +22,7 @@ class Signup extends React.Component {
     handleUserName(e) {
         e.preventDefault()
         this.setState({
-            username: e.target.value
+            username: e.target.value.toLowerCase()
         })  
     }
     handlePassword(e) {

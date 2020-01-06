@@ -60,15 +60,6 @@ class App extends React.Component {
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
-    // componentDidMount() {
-    //     axios.get(process.env.REACT_APP_BACK_END_URL + 'item')
-    //         .then(res => {
-    //             this.setState({items: [...res.data.todo_name]})
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }
 
     addToDo(e){
         e.preventDefault()
@@ -81,6 +72,7 @@ class App extends React.Component {
 
         this.setState({
             items: [...this.state.items, this.state.currentItem],
+            currentItem: ""
         })
 
 
