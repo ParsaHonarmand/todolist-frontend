@@ -100,7 +100,7 @@ class Login extends React.Component {
             if (this.state.error.length === 0) {
                 return(
                     <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
-                        <div className="error field">
+                        <div className="field">
                             <label>Username</label>
                             <div className="ui fluid input">
                                 <input

@@ -47,6 +47,7 @@ body {
 } 
 
 #footerDiv {
+    margin-top: 5px;
     margin: 0 auto;  
     text-align: center
 }
