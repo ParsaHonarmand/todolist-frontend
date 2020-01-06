@@ -46,15 +46,13 @@ body {
     background-color: #f0d3d1
 } 
 
+#footerDiv {
+    margin: 0 auto;  
+    text-align: center
+}
+
 footer {
     display: flex;
     justify-content: center
 }
 
-#footerDiv {
-    margin: 0 auto;  
-    justify-content: center
-}
-i {
-    text-align: center
-}
