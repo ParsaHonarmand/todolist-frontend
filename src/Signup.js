@@ -35,26 +35,28 @@ class Signup extends React.Component {
 
     register(e) {
         if (!this.state.password || !this.state.username || this.state.password.length<1) {
+            e.preventDefault()
             this.setState({
                 error: "Please complete all fields"
             })
         }
-
-        e.preventDefault()
-        console.log(this.state.username)
-        console.log(this.state.password)
-        const userObj = {
-            username: this.state.username,
-            password: this.state.password,
-            todos: []
+        else {
+            e.preventDefault()
+            console.log(this.state.username)
+            console.log(this.state.password)
+            const userObj = {
+                username: this.state.username,
+                password: this.state.password,
+                todos: []
+            }
+            axios.post(process.env.REACT_APP_BACK_END_URL+"createUser", userObj) 
+                .then(x => console.log('New user added: ', x.data))
+                .catch(err => console.log(err))
+            //reset at the end
+            this.setState({
+                goToItems: true
+            })
         }
-        axios.post(process.env.REACT_APP_BACK_END_URL+"createUser", userObj) 
-            .then(x => console.log('New user added: ', x.data))
-            .catch(err => console.log(err))
-        //reset at the end
-        this.setState({
-            goToItems: true
-        })
     }
 
     render() {
