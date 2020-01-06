@@ -208,7 +208,7 @@ class App extends React.Component {
                     <div className="w3-animate-opacity">
                         <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
                         <div id="list">
-                            <h2 id="header" className="ui header">Your List is Currently Empty!</h2>                    
+                            <h2 id="header" className="ui header">No more Todos left, sit back and relax :)</h2>                    
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />
@@ -217,7 +217,7 @@ class App extends React.Component {
                             <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
-                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Logout</button> 
                             </div>
                         </footer>     
                     </div>
@@ -228,7 +228,7 @@ class App extends React.Component {
                     <div>
                         <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
                         <div id="list" className="w3-animate-opacity">
-                            <h4 id="listHeader" className="ui header">Your ToDo's</h4>
+                            <h4 id="listHeader" className="ui header">Your ToDos</h4>
                             <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
@@ -238,7 +238,7 @@ class App extends React.Component {
                             <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
-                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Logout</button> 
                             </div>
                         </footer>     
                     </div>
@@ -249,18 +249,18 @@ class App extends React.Component {
                     <div>
                         <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
                         <div id="list" className="w3-animate-opacity">
-                            <h4 id="listHeader" className="ui header">Your ToDo's</h4>
+                            <h4 id="listHeader" className="ui header">Your ToDos</h4>
                             <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
-                            <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
+                            <h4 id="listHeader" className="ui header">Completed ToDos</h4>
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />  
                         </div>
                         <footer>
                             <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
-                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Logout</button> 
                             </div>
                         </footer>     
                     </div>
@@ -271,18 +271,18 @@ class App extends React.Component {
                     <div>
                         <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
                         <div id="list" className="w3-animate-opacity">
-                            <h2 id="header" className="ui header">Your List is Currently Empty!</h2>
+                        <h2 id="header" className="ui header">No more Todos left, sit back and relax :)</h2> 
                             <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
-                            <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
+                            <h4 id="listHeader" className="ui header">Completed ToDos</h4>
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
                         </div>
                         <footer>
                             <div id="footerDiv" className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
-                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Logout</button> 
                             </div>
                         </footer>     
                     </div>

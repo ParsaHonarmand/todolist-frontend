@@ -100,6 +100,7 @@ class Login extends React.Component {
             if (this.state.error.length === 0) {
                 return(
                     <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
+                        <h3 className="ui header">Member Login</h3>
                         <div className="field">
                             <label>Username</label>
                             <div className="ui fluid input">
@@ -136,41 +137,42 @@ class Login extends React.Component {
             else {
                 return (
                     <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
-                    <div className="field">
-                        <label>Username</label>
-                        <div className="ui fluid input">
-                            <input
-                                type="text"
-                                aria-describedby="form-input-first-name-error-message"
-                                aria-invalid="true"
-                                placeholder="Username"
-                                id="form-input-first-name"
-                                onChange={this.handleUserName.bind(this)}
-                                value={this.state.username}
-                            />
-                        </div>  
-                    </div>
-                    <div className="field">
-                        <label>Password</label>
-                        <div className="ui fluid input">
-                            <input 
-                                type="password" 
-                                aria-invalid="true" 
-                                placeholder="Password" 
-                                onChange={this.handlePassword.bind(this)} 
-                                value={this.state.password} 
-                            />
+                        <h3 className="ui header">Member Login</h3>
+                        <div className="field">
+                            <label>Username</label>
+                            <div className="ui fluid input">
+                                <input
+                                    type="text"
+                                    aria-describedby="form-input-first-name-error-message"
+                                    aria-invalid="true"
+                                    placeholder="Username"
+                                    id="form-input-first-name"
+                                    onChange={this.handleUserName.bind(this)}
+                                    value={this.state.username}
+                                />
+                            </div>  
                         </div>
-                    </div>
-                    <button className="ui button"><i class="unlock alternate icon"></i>Login</button>
-                    <div className="ui inverted segment">
-                        <h4 className="ui purple inverted header">Don't have an account?</h4> 
-                        <h4 className="ui purple inverted header">Click <a className="ui grey inverted header" href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
-                    </div>  
-                    <div className="ui negative message">
-                        <div className="header">{this.state.error}</div>
-                    </div>
-                </form> 
+                        <div className="field">
+                            <label>Password</label>
+                            <div className="ui fluid input">
+                                <input 
+                                    type="password" 
+                                    aria-invalid="true" 
+                                    placeholder="Password" 
+                                    onChange={this.handlePassword.bind(this)} 
+                                    value={this.state.password} 
+                                />
+                            </div>
+                        </div>
+                        <button className="ui button"><i class="unlock alternate icon"></i>Login</button>
+                        <div className="ui inverted segment">
+                            <h4 className="ui purple inverted header">Don't have an account?</h4> 
+                            <h4 className="ui purple inverted header">Click <a className="ui grey inverted header" href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
+                        </div>  
+                        <div className="ui negative message">
+                            <div className="header">{this.state.error}</div>
+                        </div>
+                    </form> 
                 )
             }
         }
