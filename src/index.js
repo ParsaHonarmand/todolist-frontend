@@ -199,10 +199,11 @@ class App extends React.Component {
     }
 
     signOut() {
-        localStorage.clear("token")
-        this.setState({
-            status: false
-        })
+        localStorage.clear()
+        window.location.href = '/';
+        // this.setState({
+        //     status: false
+        // })
     }
 
 
