@@ -137,7 +137,7 @@ class Login extends React.Component {
                 return (
                     <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
                     <div className="field">
-                        <label htmlFor="form-input-first-name">Username</label>
+                        <label>Username</label>
                         <div className="ui fluid input">
                             <input
                                 type="text"
