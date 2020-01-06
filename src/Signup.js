@@ -61,7 +61,7 @@ class Signup extends React.Component {
 
     render() {
         if (this.state.goToItems===false) {
-            if (error.length===0) {
+            if (this.state.error.length===0) {
                 return (
                     <form className="ui form" onSubmit={this.register.bind(this)} id="header">
                         <h3 className="ui header">Member Signup</h3>
