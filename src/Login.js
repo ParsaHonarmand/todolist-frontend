@@ -102,13 +102,19 @@ class Login extends React.Component {
                 <Signup />
             )
         }
-       // else if (this.state.loginValidation===true) {
         else if (this.state.loginValidation===true){
+            this.state = {
+                username: "",
+                password: "",
+                click: false,
+                todos: [],
+                loginValidation: false,
+                error: ""
+            }
             return(
                 <Index user={this.state.username} password={this.state.password} registered={this.state.loginValidation} todos={this.state.todos}/>
             )
         }
-        //if (this.state.click===false && this.loginValidation===false) {
         else {
             if (this.state.error.length === 0) {
                 return(
