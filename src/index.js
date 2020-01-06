@@ -222,12 +222,12 @@ class App extends React.Component {
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />
-                            <button onClick={this.signOut.bind(this)}>Sign out</button> 
                         </div>       
                         <footer>
                             <div className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
                             </div>
                         </footer>     
                     </div>
@@ -243,12 +243,12 @@ class App extends React.Component {
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
-                            <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
                         </div>
                         <footer>
                             <div className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
                             </div>
                         </footer>     
                     </div>
@@ -264,13 +264,13 @@ class App extends React.Component {
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
                             <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
-                            <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
-                            <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
+                            <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />  
                         </div>
                         <footer>
                             <div className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
                             </div>
                         </footer>     
                     </div>
@@ -287,12 +287,12 @@ class App extends React.Component {
                         <div id="completeList" className="w3-animate-opacity">
                             <h4 id="listHeader" className="ui header">Completed ToDo's</h4>
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} /> 
-                            <button className="ui button" onClick={this.signOut.bind(this)}>Sign out</button> 
                         </div>
                         <footer>
                             <div className="ui container">
                                 <a href="https://github.com/ParsaHonarmand/todo-list.git"><i className="ui big github icon"></i></a>
                                 <a href="https://www.linkedin.com/in/parsa-honarmand-08479b171/"><i className="ui big linkedin icon"></i></a>
+                                <button className="ui secondary button" onClick={this.signOut.bind(this)}>Sign out</button> 
                             </div>
                         </footer>     
                     </div>

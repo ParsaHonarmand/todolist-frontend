@@ -71,7 +71,7 @@ class Signup extends React.Component {
                 <div className="error field">
                     <label>Password</label>
                     <div className="ui fluid input">
-                        <input type="text" 
+                        <input type="password" 
                                 aria-invalid="true" 
                                 placeholder="Password" 
                                 onChange={this.handlePassword.bind(this)} 
