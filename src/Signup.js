@@ -52,36 +52,36 @@ class Signup extends React.Component {
 
     render() {
         if (this.state.goToItems===false) {
-        return (
-            <form className="ui form" onSubmit={this.register.bind(this)} id="header">
-                <div className="error field">
-                    <label htmlFor="form-input-first-name">Username</label>
-                    <div className="ui fluid input">
-                        <input
-                            type="text"
-                            aria-describedby="form-input-first-name-error-message"
-                            aria-invalid="true"
-                            placeholder="Username"
-                            id="form-input-first-name"
-                            onChange={this.handleUserName.bind(this)}
-                            value={this.state.username}
-                        />
-                    </div>  
-                </div>
-                <div className="error field">
-                    <label>Password</label>
-                    <div className="ui fluid input">
-                        <input type="password" 
-                                aria-invalid="true" 
-                                placeholder="Password" 
-                                onChange={this.handlePassword.bind(this)} 
-                                value={this.state.password} 
-                        />
+            return (
+                <form className="ui form" onSubmit={this.register.bind(this)} id="header">
+                    <div className="field">
+                        <label>Username</label>
+                        <div className="ui fluid input">
+                            <input
+                                type="text"
+                                aria-describedby="form-input-first-name-error-message"
+                                aria-invalid="true"
+                                placeholder="Username"
+                                id="form-input-first-name"
+                                onChange={this.handleUserName.bind(this)}
+                                value={this.state.username}
+                            />
+                        </div>  
                     </div>
-                </div>
-                <button className="ui secondary button">Sign up</button>
-            </form>
-        )}
+                    <div className="field">
+                        <label>Password</label>
+                        <div className="ui fluid input">
+                            <input type="password" 
+                                    aria-invalid="true" 
+                                    placeholder="Password" 
+                                    onChange={this.handlePassword.bind(this)} 
+                                    value={this.state.password} 
+                            />
+                        </div>
+                    </div>
+                    <button className="ui secondary button">Sign up</button>
+                </form>
+            )}
         else {
             return(
                 <Index registered={this.state.goToItems} user={this.state.username} todos={this.state.todos}/>

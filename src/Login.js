@@ -68,7 +68,7 @@ class Login extends React.Component {
             }
           })();
 
-        //reset at the end
+        e.target.reset()
     }
 
     handleLink(e) {
@@ -101,7 +101,7 @@ class Login extends React.Component {
                 return(
                     <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
                         <div className="error field">
-                            <label htmlFor="form-input-first-name">Username</label>
+                            <label>Username</label>
                             <div className="ui fluid input">
                                 <input
                                     type="text"
@@ -114,11 +114,11 @@ class Login extends React.Component {
                                 />
                             </div>  
                         </div>
-                        <div className="error field">
+                        <div className="field">
                             <label>Password</label>
                             <div className="ui fluid input">
                                 <input 
-                                    type="text" 
+                                    type="password" 
                                     aria-invalid="true" 
                                     placeholder="Password" 
                                     onChange={this.handlePassword.bind(this)} 
@@ -136,7 +136,7 @@ class Login extends React.Component {
             else {
                 return (
                     <form className="ui form" onSubmit={this.validateLogin.bind(this)} id="header">
-                    <div className="error field">
+                    <div className="field">
                         <label htmlFor="form-input-first-name">Username</label>
                         <div className="ui fluid input">
                             <input
@@ -150,7 +150,7 @@ class Login extends React.Component {
                             />
                         </div>  
                     </div>
-                    <div className="error field">
+                    <div className="field">
                         <label>Password</label>
                         <div className="ui fluid input">
                             <input 
