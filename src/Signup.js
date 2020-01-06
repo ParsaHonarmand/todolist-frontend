@@ -79,7 +79,7 @@ class Signup extends React.Component {
                         />
                     </div>
                 </div>
-                <button className="ui button">Sign up</button>
+                <button className="ui secondary button">Sign up</button>
             </form>
         )}
         else {

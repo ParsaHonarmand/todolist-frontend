@@ -139,10 +139,9 @@ class Login extends React.Component {
                                 />
                             </div>
                         </div>
-                        <button className="ui button">Login</button>
+                        <button className="ui secondary button">Login</button>
                         <div className="ui inverted segment">
-                            <h4 className="ui purple inverted header">Don't have an account?</h4> 
-                            <h4 className="ui purple inverted header">Click <a className="ui grey inverted header" href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
+                            <h4 className="ui purple inverted header">Don't have an account? Click <a className="ui grey inverted header" href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
                         </div>  
                     </form> 
                 )
