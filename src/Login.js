@@ -137,7 +137,7 @@ class Login extends React.Component {
                                 />
                             </div>
                         </div>
-                        <button className="ui secondary button">Login</button>
+                        <button className="ui secondary button"><i class="unlock alternate icon"></i>Login</button>
                         <div className="ui inverted segment">
                             <h4 className="ui purple inverted header">Don't have an account? Click <a className="ui grey inverted header" href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
                         </div>  
@@ -173,7 +173,7 @@ class Login extends React.Component {
                             />
                         </div>
                     </div>
-                    <button className="ui button">Login</button>
+                    <button className="ui button"><i class="unlock alternate icon"></i>Login</button>
                     <div className="ui inverted segment">
                         <h4 className="ui purple inverted header">Don't have an account?</h4> 
                         <h4 className="ui purple inverted header">Click <a className="ui grey inverted header" href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>

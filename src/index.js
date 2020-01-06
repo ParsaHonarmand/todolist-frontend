@@ -201,9 +201,6 @@ class App extends React.Component {
     signOut() {
         localStorage.clear()
         window.location.href = '/';
-        // this.setState({
-        //     status: false
-        // })
     }
 
 
