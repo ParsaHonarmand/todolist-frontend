@@ -33,6 +33,8 @@ class Signup extends React.Component {
     }
 
     register(e) {
+        if (!this.state.password || !this.state.username || this.state.password.length<1) return
+
         e.preventDefault()
         console.log(this.state.username)
         console.log(this.state.password)
