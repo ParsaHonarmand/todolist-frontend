@@ -168,7 +168,7 @@ class Login extends React.Component {
                         <label>Password</label>
                         <div className="ui fluid input">
                             <input 
-                                type="text" 
+                                type="password" 
                                 aria-invalid="true" 
                                 placeholder="Password" 
                                 onChange={this.handlePassword.bind(this)} 
@@ -177,9 +177,9 @@ class Login extends React.Component {
                         </div>
                     </div>
                     <button className="ui button">Login</button>
-                    <div>
-                        <h4>Don't have an account?</h4> 
-                        <h4>Click <a href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
+                    <div className="ui inverted segment">
+                        <h4 className="ui purple inverted header">Don't have an account?</h4> 
+                        <h4 className="ui purple inverted header">Click <a className="ui grey inverted header" href="" onClick={this.handleLink.bind(this)}>HERE</a> to sign up!</h4>
                     </div>  
                     <div className="ui negative message">
                         <div className="header">{this.state.error}</div>
