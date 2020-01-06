@@ -208,7 +208,7 @@ class App extends React.Component {
                     <div className="w3-animate-opacity">
                         <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
                         <div id="list">
-                            <h2 id="header" className="ui header">No more Todos left, sit back and relax :)</h2>                    
+                            <h2 id="header" className="ui header">No more todos left, sit back and relax :)</h2>                    
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
                             <CompletedItems wholeList={this.state.status} onDelete={this.deleteCompleted.bind(this)} onRevert={this.revertCompleted.bind(this)} />
@@ -271,7 +271,7 @@ class App extends React.Component {
                     <div>
                         <Header add={this.addToDo.bind(this)} handle={this.handleInput.bind(this)}/>
                         <div id="list" className="w3-animate-opacity">
-                        <h2 id="header" className="ui header">No more Todos left, sit back and relax :)</h2> 
+                        <h2 id="header" className="ui header">No more todos left, sit back and relax :)</h2> 
                             <ToDoItems wholeList={this.state.items} onDelete={this.deleteToDo.bind(this)} onComplete={this.completeToDo.bind(this)} />                    
                         </div>
                         <div id="completeList" className="w3-animate-opacity">
