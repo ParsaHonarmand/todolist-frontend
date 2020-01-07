@@ -64,7 +64,7 @@ class Signup extends React.Component {
             if (this.state.error.length===0) {
                 return (
                     <form className="ui form" onSubmit={this.register.bind(this)} id="header">
-                        <h3 className="ui header">Member Signup</h3>
+                        <h2 className="ui header">Member Signup</h2>
                         <div className="field">
                             <label>Username</label>
                             <div className="ui fluid input">
@@ -97,7 +97,7 @@ class Signup extends React.Component {
             else {
                 return (
                     <form className="ui form" onSubmit={this.register.bind(this)} id="header">
-                        <h3 className="ui header">Member Signup</h3>
+                        <h2 className="ui header">Member Signup</h2>
                         <div className="field">
                             <label>Username</label>
                             <div className="ui fluid input">
