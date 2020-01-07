@@ -1,9 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css'
-import ToDoItems from './ToDoItems.js'
-import CompletedItems from './CompletedItems.js';
-import Header from './Header'
 import Index from './index'
 
 const axios = require('axios');
@@ -52,7 +48,7 @@ class Signup extends React.Component {
             axios.post(process.env.REACT_APP_BACK_END_URL+"createUser", userObj) 
                 .then(x => console.log('New user added: ', x.data))
                 .catch(err => console.log(err))
-            //reset at the end
+                
             this.setState({
                 goToItems: true
             })

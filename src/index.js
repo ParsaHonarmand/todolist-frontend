@@ -5,14 +5,13 @@ import ToDoItems from './ToDoItems.js'
 import CompletedItems from './CompletedItems.js';
 import Header from './Header'
 import Login from './Login';
-import SignUp from './Signup'
 
 const axios = require('axios');
 let status = false
 let user
 let prevCompleted = []
 let stillToDo = []
-let unDefItems = []
+
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -20,7 +19,6 @@ class App extends React.Component {
             status = true
             user = props.user
             if (props.todos) {
-                let wholeList = props.todos
                 for (var i=0; i<props.todos.length; i++){
                     if(props.todos[i].todo_check===false){
                         stillToDo = [...stillToDo, props.todos[i]]
@@ -29,13 +27,7 @@ class App extends React.Component {
                         prevCompleted = [...prevCompleted, props.todos[i]]
                     }
                 }
-            }
-            //this.callAPI = this.callAPI.bind(this)
-            this.retrieveItems = this.retrieveItems.bind(this) 
-            this.getCompletedItem = this.getCompletedItem.bind(this)
-            //this.callAPI();
-        //    this.retrieveItems();
-        //    this.getCompletedItem();   
+            }  
         }
         this.state = {
             items: stillToDo,
@@ -43,23 +35,7 @@ class App extends React.Component {
             currentItem: ''
         }    
     }
-    // callAPI() {
-    //     axios.get('http://localhost:3001')
-    //     .then(x => console.log(x))
-    //     .catch(err => console.log(err))
-    // }
 
-    retrieveItems() {
-        axios.post(process.env.REACT_APP_BACK_END_URL + 'retrieveItem', {username: user})
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err))
-    }
-    
-    getCompletedItem() {
-        axios.post(process.env.REACT_APP_BACK_END_URL + 'completedList', {username: user})
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err))
-    }
 
     addToDo(e){
         e.preventDefault()
@@ -74,8 +50,6 @@ class App extends React.Component {
             items: [...this.state.items, this.state.currentItem],
             currentItem: ""
         })
-
-
 
         axios.post(process.env.REACT_APP_BACK_END_URL + "item", userObj) 
             .then(x => console.log('added to todolist:', x.data))
@@ -129,8 +103,8 @@ class App extends React.Component {
         })
 
         axios.post(process.env.REACT_APP_BACK_END_URL + "delete", itemObj) 
-        .then(x => console.log('item deleted: ', x.data))
-        .catch(err => console.log(err))
+            .then(x => console.log('item deleted: ', x.data))
+            .catch(err => console.log(err))
     }
 
 
